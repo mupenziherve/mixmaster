@@ -1,21 +1,53 @@
-import React from 'react'
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import { About,
+         HomeLayout,
+         Landing,
+         Error,
+         NewsLetter,
+         Cocktail,
+
+
+  } from './pages';
+
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <h2>Home Page</h2>,
+    element: <HomeLayout />,
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path: 'cocktail',
+        element: <Cocktail />,
+      },
+      {
+        path: 'newsletter',
+        element: <NewsLetter />,
+      },
+      {
+        path: 'about',
+        element: <About />,
+        children: [
+          {
+            path: 'company',
+            element: <h2>Our company</h2>,
+          },
+          {
+            path: 'Person',
+            element: <h2>Our company</h2>,
+          },
+        ],
+      },
+    ],
   },
-  {
-    path: '/about',
-    element: <div>
-      <h2>About page</h2>
-    </div>,
-  },
-]);
-
+])
 const App = () => {
-  return <h1>Mixmaster starter</h1>
+  return <RouterProvider router={router} />
 }
 
-export default App
+export default App;
