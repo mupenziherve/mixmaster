@@ -31,15 +31,22 @@ const Wrapper = styled.nav`
     transition: var(--transition);
     letter-spacing: 2px;
   }
-  .nav-link {
+  .nav-link:hover {
     color: var(--primary-500);
   }
   /* active */
   @media (min-width: 768px) {
-    
+    .nav-center {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links {
+      flex-direction: row;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
   }
-
-
 `
 
 export default Wrapper;
