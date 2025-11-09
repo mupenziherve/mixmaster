@@ -34,6 +34,10 @@ const Wrapper = styled.nav`
   .nav-link:hover {
     color: var(--primary-500);
   }
+  .active {
+    color: var(--primary-500);
+  }
+
   /* active */
   @media (min-width: 768px) {
     .nav-center {
