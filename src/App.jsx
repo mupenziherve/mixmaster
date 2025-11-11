@@ -7,6 +7,7 @@ import { About,
          Error,
          NewsLetter,
          Cocktail,
+         SinglePageError,
 
 
   } from './pages';
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
-        errorElement: <h2>something went wrong</h2>,
+        errorElement: <h2>something went wrong...</h2>,
         loader: landingLoader,
       },
       {

@@ -1,7 +1,8 @@
 import { useRouteError } from "react-router-dom";
 
-const singlePageError = () => {
+const SinglePageError = () => {
     const error = useRouteError ();
-  return <div>singlePageError</div>;
+    console.log(error);
+  return <h2>{error.message}</h2>;
 };
-export default singlePageError;
+export default SinglePageError;
